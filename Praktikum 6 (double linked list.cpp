@@ -5,7 +5,8 @@ using namespace std;
 struct Node
 {
     int noMhs;
-    string name
+    string name;
+    Node *next;
 };
 
 int main()
