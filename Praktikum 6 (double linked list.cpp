@@ -13,11 +13,11 @@ struct Node
 Node* START = NULL;
 
 void addNote() {
-    Node* newNode = new Node();
+    Node* newNode = new Node(); // STEP 1: create a new node
     cout << "\nEnter the roll number of student: ";
-    cin >> newNode->noMhs;
+    cin >> newNode->noMhs;      // assign value to the data field of the new node
     cout << "\nEnter the name of the student: ";
-    cin >> newNode->name;
+    cin >> newNode->name;       // Assign value to the data field of the new node
 }
 
 int main()
