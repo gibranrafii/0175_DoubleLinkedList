@@ -6,13 +6,13 @@ struct Node
 {
     int noMhs;
     string name;
-    Node *next;
+    Node* next;
     Node* prev;
 };
 
 Node* START = NULL;
 
-void addNote() {
+void addNode() {
     Node* newNode = new Node(); // STEP 1: create a new node
     cout << "\nEnter the roll number of student: ";
     cin >> newNode->noMhs;      // assign value to the data field of the new node
@@ -59,6 +59,18 @@ void addNote() {
             START = newNode;
         }
     }
+}
+
+bool search(int rollNo, Node** previous, Node** current)
+{
+    *previous = NULL;
+    *current = START;
+    while (*current != NULL && (*current)->noMhs != rollNo)
+    {
+        *previous = *current;
+        *current = (*current)->next;
+    }
+    return (*current != NULL);
 }
 
 int main()
